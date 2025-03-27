@@ -1,8 +1,8 @@
 var searchData=
 [
   ['id_0',['id',['../structevent__detector_1_1ClientConnection.html#a5bd421a574ae99bdb612317abcb5be54',1,'event_detector::ClientConnection']]],
-  ['implement_20a_20custom_20action_20plugin_1',['How to implement a custom action plugin',['../index.html#autotoc_md13',1,'']]],
-  ['implement_20a_20custom_20analysis_20rule_2',['How to implement a custom analysis rule',['../index.html#autotoc_md12',1,'']]],
+  ['implement_20a_20custom_20action_20plugin_1',['How to implement a custom action plugin',['../index.html#autotoc_md14',1,'']]],
+  ['implement_20a_20custom_20analysis_20rule_2',['How to implement a custom analysis rule',['../index.html#autotoc_md13',1,'']]],
   ['initialization_5fbags_3',['initialization_bags',['../classevent__detector_1_1EventDetector.html#ab8c1ca66df7239f2213afa7b3d680c4d',1,'event_detector::EventDetector']]],
   ['initialize_4',['initialize',['../classevent__detector_1_1AnalysisRule.html#afa34eb5d2a02767126ee9f505bd0412e',1,'event_detector::AnalysisRule']]],
   ['initializebufferfrombag_5',['initializeBufferFromBag',['../classevent__detector_1_1EventDetector.html#a2ea85359038759920222efe3ece6ad5f',1,'event_detector::EventDetector']]],
