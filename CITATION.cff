@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "We hope that our tools can help your research. If this is the case, please cite it using the following metadata."
+
+title: event_detector
+type: software
+repository-code: "https://github.com/ika-rwth-aachen/event_detector"
+date-released: 2025-04-01
+authors:
+  - given-names: Lennart
+    family-names: Reiher
+  - given-names: Bastian
+    family-names: Lampe
+  - given-names: Lukas
+    family-names: Zanger
+
+preferred-citation:
+  title: "Event Detection in C-ITS: Classification, Use Cases and Reference Implementation"
+  type: conference-paper
+  conference:
+    name: "Uni-DAS e.V. Workshop Fahrerassistenz und automatisiertes Fahren"
+  month: 4
+  year: 2023
+  # doi: ""
+  authors:
+    - given-names: Lennart
+      family-names: Reiher
+      orcid: "https://orcid.org/0000-0002-7309-164X"
+    - given-names: Bastian
+      family-names: Lampe
+      orcid: "https://orcid.org/0000-0002-4414-6947"
+    - given-names: Lukas
+      family-names: Zanger
+      orcid: "https://orcid.org/0009-0005-0292-2660"
+    - given-names: Timo
+      family-names: Woopen
+    - given-names: Lutz
+      family-names: Eckstein

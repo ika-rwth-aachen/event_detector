@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+
+  <name>event_detector</name>
+  <version>1.0.0</version>
+  <description>Generic and modular event detection framework</description>
+  <license>MIT</license>
+
+  <maintainer email="lennart.reiher@rwth-aachen.de">Lennart Reiher</maintainer>
+
+  <author email="lennart.reiher@rwth-aachen.de">Lennart Reiher</author>
+  <author email="bastian.lampe@rwth-aachen.de">Bastian Lampe</author>
+  <author email="lukas.zanger@rwth-aachen.de">Lukas Zanger</author>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>builtin_interfaces</depend>
+  <depend>diagnostic_msgs</depend>
+  <depend>etsi_its_cam_msgs</depend>
+  <depend>etsi_its_cam_ts_msgs</depend>
+  <depend>etsi_its_cpm_ts_msgs</depend>
+  <depend>etsi_its_denm_msgs</depend>
+  <depend>etsi_its_mapem_ts_msgs</depend>
+  <depend>etsi_its_spatem_ts_msgs</depend>
+  <depend>etsi_its_vam_ts_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>lifecycle_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>perception_msgs</depend>
+  <depend>pluginlib</depend>
+  <depend>rclcpp_components</depend>
+  <depend>rclcpp_lifecycle</depend>
+  <depend>rclcpp</depend>
+  <depend>rosbag2_cpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>shape_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
+  <depend>stereo_msgs</depend>
+  <depend>tf2_geometry_msgs</depend>
+  <depend>tf2_msgs</depend>
+  <depend>tf2_ros</depend>
+  <depend>tf2</depend>
+  <depend>trajectory_msgs</depend>
+  <depend>vision_msgs</depend>
+  <depend>visualization_msgs</depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_cmake_google_benchmark</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+
+</package>

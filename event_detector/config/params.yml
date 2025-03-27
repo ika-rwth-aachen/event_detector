@@ -1,0 +1,207 @@
+event_detector:
+  ros__parameters:
+
+    # use_sim_time: true    # whether to use simulation time, e.g., when playing bagfiles
+    startup_state: 3        # initial lifecycle state (1: unconfigured, 2: inactive, 3: active)
+
+    # buffer parameters
+    buffer:
+      default_time: 10.0        # default buffer length (in seconds)
+      default_queue_size: 20    # default subscriber queue size
+      # initialization_bags: [] # ROS bag files to initialize buffer with
+      use_msg_stamp: true       # whether to use message stamp for sorting, if present
+
+    # analysis parameters
+    analysis:
+      default_period: 1.0     # default period (in seconds) between subsequent analysis rule evaluations
+
+    # client names
+    clients:
+      - my_client
+
+    # client parameters by client name
+    client_params:
+      my_client:
+
+        # base_frame:   # client base frame used for storing static transforms
+        # tf_prefix:    # client-specific prefix of frames found in dynamic transforms
+
+        # data types to subscribe
+        data_types:
+          # - builtin_interfaces__Duration
+          # - builtin_interfaces__Time
+          # - diagnostic_msgs__DiagnosticArray
+          # - diagnostic_msgs__DiagnosticStatus
+          # - diagnostic_msgs__KeyValue
+          # - etsi_its_cam_msgs__CAM
+          # - etsi_its_cam_ts_msgs__CAM
+          # - etsi_its_cpm_ts_msgs__CollectivePerceptionMessage
+          # - etsi_its_denm_msgs__DENM
+          # - etsi_its_mapem_ts_msgs__MAPEM
+          # - etsi_its_spatem_ts_msgs__SPATEM
+          # - etsi_its_vam_ts_msgs__VAM
+          # - geometry_msgs__Accel
+          # - geometry_msgs__AccelStamped
+          # - geometry_msgs__AccelWithCovariance
+          # - geometry_msgs__AccelWithCovarianceStamped
+          # - geometry_msgs__Inertia
+          # - geometry_msgs__InertiaStamped
+          # - geometry_msgs__Point
+          # - geometry_msgs__Point32
+          # - geometry_msgs__PointStamped
+          # - geometry_msgs__Polygon
+          # - geometry_msgs__PolygonStamped
+          # - geometry_msgs__Pose
+          # - geometry_msgs__Pose2D
+          # - geometry_msgs__PoseArray
+          - geometry_msgs__PoseStamped
+          # - geometry_msgs__PoseWithCovariance
+          # - geometry_msgs__PoseWithCovarianceStamped
+          # - geometry_msgs__Quaternion
+          # - geometry_msgs__QuaternionStamped
+          # - geometry_msgs__Transform
+          # - geometry_msgs__TransformStamped
+          # - geometry_msgs__Twist
+          # - geometry_msgs__TwistStamped
+          # - geometry_msgs__TwistWithCovariance
+          # - geometry_msgs__TwistWithCovarianceStamped
+          # - geometry_msgs__Vector3
+          # - geometry_msgs__Vector3Stamped
+          # - geometry_msgs__Wrench
+          # - geometry_msgs__WrenchStamped
+          # - nav_msgs__GridCells
+          # - nav_msgs__MapMetaData
+          # - nav_msgs__OccupancyGrid
+          # - nav_msgs__Odometry
+          # - nav_msgs__Path
+          # - perception_msgs__EgoData
+          # - perception_msgs__Object
+          # - perception_msgs__ObjectClassification
+          # - perception_msgs__ObjectList
+          # - perception_msgs__ObjectReferencePoint
+          # - perception_msgs__ObjectState
+          # - perception_msgs__ObjectStatePrediction
+          # - sensor_msgs__BatteryState
+          # - sensor_msgs__CameraInfo
+          # - sensor_msgs__ChannelFloat32
+          # - sensor_msgs__CompressedImage
+          # - sensor_msgs__FluidPressure
+          # - sensor_msgs__Illuminance
+          # - sensor_msgs__Image
+          # - sensor_msgs__Imu
+          # - sensor_msgs__JointState
+          # - sensor_msgs__Joy
+          # - sensor_msgs__JoyFeedback
+          # - sensor_msgs__JoyFeedbackArray
+          # - sensor_msgs__LaserEcho
+          # - sensor_msgs__LaserScan
+          # - sensor_msgs__MagneticField
+          # - sensor_msgs__MultiDOFJointState
+          # - sensor_msgs__MultiEchoLaserScan
+          # - sensor_msgs__NavSatFix
+          # - sensor_msgs__NavSatStatus
+          # - sensor_msgs__PointCloud
+          # - sensor_msgs__PointCloud2
+          # - sensor_msgs__PointField
+          # - sensor_msgs__Range
+          # - sensor_msgs__RegionOfInterest
+          # - sensor_msgs__RelativeHumidity
+          # - sensor_msgs__Temperature
+          # - sensor_msgs__TimeReference
+          # - shape_msgs__Mesh
+          # - shape_msgs__MeshTriangle
+          # - shape_msgs__Plane
+          # - shape_msgs__SolidPrimitive
+          # - std_msgs__Bool
+          # - std_msgs__Byte
+          # - std_msgs__ByteMultiArray
+          # - std_msgs__Char
+          # - std_msgs__ColorRGBA
+          # - std_msgs__Empty
+          # - std_msgs__Float32
+          # - std_msgs__Float32MultiArray
+          # - std_msgs__Float64
+          # - std_msgs__Float64MultiArray
+          # - std_msgs__Header
+          # - std_msgs__Int16
+          # - std_msgs__Int16MultiArray
+          # - std_msgs__Int32
+          # - std_msgs__Int32MultiArray
+          # - std_msgs__Int64
+          # - std_msgs__Int64MultiArray
+          # - std_msgs__Int8
+          # - std_msgs__Int8MultiArray
+          # - std_msgs__MultiArrayDimension
+          # - std_msgs__MultiArrayLayout
+          # - std_msgs__String
+          # - std_msgs__UInt16
+          # - std_msgs__UInt16MultiArray
+          # - std_msgs__UInt32
+          # - std_msgs__UInt32MultiArray
+          # - std_msgs__UInt64
+          # - std_msgs__UInt64MultiArray
+          # - std_msgs__UInt8
+          # - std_msgs__UInt8MultiArray
+          # - stereo_msgs__DisparityImage
+          # - tf2_msgs__TF2Error
+          # - tf2_msgs__TFMessage
+          # - trajectory_msgs__JointTrajectory
+          # - trajectory_msgs__JointTrajectoryPoint
+          # - trajectory_msgs__MultiDOFJointTrajectory
+          # - trajectory_msgs__MultiDOFJointTrajectoryPoint
+          # - vision_msgs__BoundingBox2D
+          # - vision_msgs__BoundingBox2DArray
+          # - vision_msgs__BoundingBox3D
+          # - vision_msgs__BoundingBox3DArray
+          # - vision_msgs__Classification
+          # - vision_msgs__Detection2D
+          # - vision_msgs__Detection2DArray
+          # - vision_msgs__Detection3D
+          # - vision_msgs__Detection3DArray
+          # - vision_msgs__LabelInfo
+          # - vision_msgs__ObjectHypothesis
+          # - vision_msgs__ObjectHypothesisWithPose
+          # - vision_msgs__Point2D
+          # - vision_msgs__Pose2D
+          # - vision_msgs__VisionClass
+          # - vision_msgs__VisionInfo
+          # - visualization_msgs__ImageMarker
+          # - visualization_msgs__InteractiveMarker
+          # - visualization_msgs__InteractiveMarkerControl
+          # - visualization_msgs__InteractiveMarkerFeedback
+          # - visualization_msgs__InteractiveMarkerInit
+          # - visualization_msgs__InteractiveMarkerPose
+          # - visualization_msgs__InteractiveMarkerUpdate
+          # - visualization_msgs__Marker
+          # - visualization_msgs__MarkerArray
+          # - visualization_msgs__MenuEntry
+          # - visualization_msgs__MeshFile
+          # - visualization_msgs__UVCoordinate
+
+        # data type-specific parameters
+        data_type_params:
+          geometry_msgs__PoseStamped:
+
+            # topic names
+            topics:
+              - /clients/my_client/pose
+
+            # buffer length (in seconds) for each topic
+            # buffer_times:
+            #   - 10.0
+
+            # subscriber queue size for each topic
+            # queue_sizes:
+            #   - 20
+
+    # rule names
+    rules:
+      - event_detector_my_plugin::MyPluginRule
+
+    # analysis rule parameters by rule name
+    rule_params:
+
+      event_detector_my_plugin::MyPluginRule:
+        enabled: false
+        parameters:
+          my_param: 1.0

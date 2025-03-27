@@ -1,0 +1,192 @@
+/** ============================================================================
+MIT License
+
+Copyright (c) 2025 Institute for Automotive Engineering (ika), RWTH Aachen University
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+============================================================================= */
+
+/* =============================================================================
+The lines below represent calls to a macro named DATATYPE.
+Wherever needed, this macro may be defined and called for all supported
+datatypes by including this file.
+
+The second column is the datatype variable name, which is also used as key for
+the ROS parameters configuration.
+
+Example:
+
+#define DATATYPE(TYPE, VAR)                                                    \
+  std::cout << "The ROS message type " << #TYPE << " is supported. ";          \
+  std::cout << "Variables concerning this datatype are named " << #VAR << ". ";\
+  std::cout << std::endl;
+#include "event_detector/datatypes.macro"
+#undef DATATYPE
+
+============================================================================= */
+
+DATATYPE(builtin_interfaces::msg::Duration,                       builtin_interfaces__Duration)
+DATATYPE(builtin_interfaces::msg::Time,                           builtin_interfaces__Time)
+DATATYPE(diagnostic_msgs::msg::DiagnosticArray,                   diagnostic_msgs__DiagnosticArray)
+DATATYPE(diagnostic_msgs::msg::DiagnosticStatus,                  diagnostic_msgs__DiagnosticStatus)
+DATATYPE(diagnostic_msgs::msg::KeyValue,                          diagnostic_msgs__KeyValue)
+DATATYPE(etsi_its_cam_msgs::msg::CAM,                             etsi_its_cam_msgs__CAM)
+DATATYPE(etsi_its_cam_ts_msgs::msg::CAM,                          etsi_its_cam_ts_msgs__CAM)
+DATATYPE(etsi_its_cpm_ts_msgs::msg::CollectivePerceptionMessage,  etsi_its_cpm_ts_msgs__CollectivePerceptionMessage)
+DATATYPE(etsi_its_denm_msgs::msg::DENM,                           etsi_its_denm_msgs__DENM)
+DATATYPE(etsi_its_mapem_ts_msgs::msg::MAPEM,                      etsi_its_mapem_ts_msgs__MAPEM)
+DATATYPE(etsi_its_spatem_ts_msgs::msg::SPATEM,                    etsi_its_spatem_ts_msgs__SPATEM)
+DATATYPE(etsi_its_vam_ts_msgs::msg::VAM,                          etsi_its_vam_ts_msgs__VAM)
+DATATYPE(geometry_msgs::msg::Accel,                               geometry_msgs__Accel)
+DATATYPE(geometry_msgs::msg::AccelStamped,                        geometry_msgs__AccelStamped)
+DATATYPE(geometry_msgs::msg::AccelWithCovariance,                 geometry_msgs__AccelWithCovariance)
+DATATYPE(geometry_msgs::msg::AccelWithCovarianceStamped,          geometry_msgs__AccelWithCovarianceStamped)
+DATATYPE(geometry_msgs::msg::Inertia,                             geometry_msgs__Inertia)
+DATATYPE(geometry_msgs::msg::InertiaStamped,                      geometry_msgs__InertiaStamped)
+DATATYPE(geometry_msgs::msg::Point,                               geometry_msgs__Point)
+DATATYPE(geometry_msgs::msg::Point32,                             geometry_msgs__Point32)
+DATATYPE(geometry_msgs::msg::PointStamped,                        geometry_msgs__PointStamped)
+DATATYPE(geometry_msgs::msg::Polygon,                             geometry_msgs__Polygon)
+DATATYPE(geometry_msgs::msg::PolygonStamped,                      geometry_msgs__PolygonStamped)
+DATATYPE(geometry_msgs::msg::Pose,                                geometry_msgs__Pose)
+DATATYPE(geometry_msgs::msg::Pose2D,                              geometry_msgs__Pose2D)
+DATATYPE(geometry_msgs::msg::PoseArray,                           geometry_msgs__PoseArray)
+DATATYPE(geometry_msgs::msg::PoseStamped,                         geometry_msgs__PoseStamped)
+DATATYPE(geometry_msgs::msg::PoseWithCovariance,                  geometry_msgs__PoseWithCovariance)
+DATATYPE(geometry_msgs::msg::PoseWithCovarianceStamped,           geometry_msgs__PoseWithCovarianceStamped)
+DATATYPE(geometry_msgs::msg::Quaternion,                          geometry_msgs__Quaternion)
+DATATYPE(geometry_msgs::msg::QuaternionStamped,                   geometry_msgs__QuaternionStamped)
+DATATYPE(geometry_msgs::msg::Transform,                           geometry_msgs__Transform)
+DATATYPE(geometry_msgs::msg::TransformStamped,                    geometry_msgs__TransformStamped)
+DATATYPE(geometry_msgs::msg::Twist,                               geometry_msgs__Twist)
+DATATYPE(geometry_msgs::msg::TwistStamped,                        geometry_msgs__TwistStamped)
+DATATYPE(geometry_msgs::msg::TwistWithCovariance,                 geometry_msgs__TwistWithCovariance)
+DATATYPE(geometry_msgs::msg::TwistWithCovarianceStamped,          geometry_msgs__TwistWithCovarianceStamped)
+DATATYPE(geometry_msgs::msg::Vector3,                             geometry_msgs__Vector3)
+DATATYPE(geometry_msgs::msg::Vector3Stamped,                      geometry_msgs__Vector3Stamped)
+DATATYPE(geometry_msgs::msg::Wrench,                              geometry_msgs__Wrench)
+DATATYPE(geometry_msgs::msg::WrenchStamped,                       geometry_msgs__WrenchStamped)
+DATATYPE(nav_msgs::msg::GridCells,                                nav_msgs__GridCells)
+DATATYPE(nav_msgs::msg::MapMetaData,                              nav_msgs__MapMetaData)
+DATATYPE(nav_msgs::msg::OccupancyGrid,                            nav_msgs__OccupancyGrid)
+DATATYPE(nav_msgs::msg::Odometry,                                 nav_msgs__Odometry)
+DATATYPE(nav_msgs::msg::Path,                                     nav_msgs__Path)
+DATATYPE(perception_msgs::msg::EgoData,                           perception_msgs__EgoData)
+DATATYPE(perception_msgs::msg::Object,                            perception_msgs__Object)
+DATATYPE(perception_msgs::msg::ObjectClassification,              perception_msgs__ObjectClassification)
+DATATYPE(perception_msgs::msg::ObjectList,                        perception_msgs__ObjectList)
+DATATYPE(perception_msgs::msg::ObjectReferencePoint,              perception_msgs__ObjectReferencePoint)
+DATATYPE(perception_msgs::msg::ObjectState,                       perception_msgs__ObjectState)
+DATATYPE(perception_msgs::msg::ObjectStatePrediction,             perception_msgs__ObjectStatePrediction)
+DATATYPE(sensor_msgs::msg::BatteryState,                          sensor_msgs__BatteryState)
+DATATYPE(sensor_msgs::msg::CameraInfo,                            sensor_msgs__CameraInfo)
+DATATYPE(sensor_msgs::msg::ChannelFloat32,                        sensor_msgs__ChannelFloat32)
+DATATYPE(sensor_msgs::msg::CompressedImage,                       sensor_msgs__CompressedImage)
+DATATYPE(sensor_msgs::msg::FluidPressure,                         sensor_msgs__FluidPressure)
+DATATYPE(sensor_msgs::msg::Illuminance,                           sensor_msgs__Illuminance)
+DATATYPE(sensor_msgs::msg::Image,                                 sensor_msgs__Image)
+DATATYPE(sensor_msgs::msg::Imu,                                   sensor_msgs__Imu)
+DATATYPE(sensor_msgs::msg::JointState,                            sensor_msgs__JointState)
+DATATYPE(sensor_msgs::msg::Joy,                                   sensor_msgs__Joy)
+DATATYPE(sensor_msgs::msg::JoyFeedback,                           sensor_msgs__JoyFeedback)
+DATATYPE(sensor_msgs::msg::JoyFeedbackArray,                      sensor_msgs__JoyFeedbackArray)
+DATATYPE(sensor_msgs::msg::LaserEcho,                             sensor_msgs__LaserEcho)
+DATATYPE(sensor_msgs::msg::LaserScan,                             sensor_msgs__LaserScan)
+DATATYPE(sensor_msgs::msg::MagneticField,                         sensor_msgs__MagneticField)
+DATATYPE(sensor_msgs::msg::MultiDOFJointState,                    sensor_msgs__MultiDOFJointState)
+DATATYPE(sensor_msgs::msg::MultiEchoLaserScan,                    sensor_msgs__MultiEchoLaserScan)
+DATATYPE(sensor_msgs::msg::NavSatFix,                             sensor_msgs__NavSatFix)
+DATATYPE(sensor_msgs::msg::NavSatStatus,                          sensor_msgs__NavSatStatus)
+DATATYPE(sensor_msgs::msg::PointCloud,                            sensor_msgs__PointCloud)
+DATATYPE(sensor_msgs::msg::PointCloud2,                           sensor_msgs__PointCloud2)
+DATATYPE(sensor_msgs::msg::PointField,                            sensor_msgs__PointField)
+DATATYPE(sensor_msgs::msg::Range,                                 sensor_msgs__Range)
+DATATYPE(sensor_msgs::msg::RegionOfInterest,                      sensor_msgs__RegionOfInterest)
+DATATYPE(sensor_msgs::msg::RelativeHumidity,                      sensor_msgs__RelativeHumidity)
+DATATYPE(sensor_msgs::msg::Temperature,                           sensor_msgs__Temperature)
+DATATYPE(sensor_msgs::msg::TimeReference,                         sensor_msgs__TimeReference)
+DATATYPE(shape_msgs::msg::Mesh,                                   shape_msgs__Mesh)
+DATATYPE(shape_msgs::msg::MeshTriangle,                           shape_msgs__MeshTriangle)
+DATATYPE(shape_msgs::msg::Plane,                                  shape_msgs__Plane)
+DATATYPE(shape_msgs::msg::SolidPrimitive,                         shape_msgs__SolidPrimitive)
+DATATYPE(std_msgs::msg::Bool,                                     std_msgs__Bool)
+DATATYPE(std_msgs::msg::Byte,                                     std_msgs__Byte)
+DATATYPE(std_msgs::msg::ByteMultiArray,                           std_msgs__ByteMultiArray)
+DATATYPE(std_msgs::msg::Char,                                     std_msgs__Char)
+DATATYPE(std_msgs::msg::ColorRGBA,                                std_msgs__ColorRGBA)
+DATATYPE(std_msgs::msg::Empty,                                    std_msgs__Empty)
+DATATYPE(std_msgs::msg::Float32,                                  std_msgs__Float32)
+DATATYPE(std_msgs::msg::Float32MultiArray,                        std_msgs__Float32MultiArray)
+DATATYPE(std_msgs::msg::Float64,                                  std_msgs__Float64)
+DATATYPE(std_msgs::msg::Float64MultiArray,                        std_msgs__Float64MultiArray)
+DATATYPE(std_msgs::msg::Header,                                   std_msgs__Header)
+DATATYPE(std_msgs::msg::Int16,                                    std_msgs__Int16)
+DATATYPE(std_msgs::msg::Int16MultiArray,                          std_msgs__Int16MultiArray)
+DATATYPE(std_msgs::msg::Int32,                                    std_msgs__Int32)
+DATATYPE(std_msgs::msg::Int32MultiArray,                          std_msgs__Int32MultiArray)
+DATATYPE(std_msgs::msg::Int64,                                    std_msgs__Int64)
+DATATYPE(std_msgs::msg::Int64MultiArray,                          std_msgs__Int64MultiArray)
+DATATYPE(std_msgs::msg::Int8,                                     std_msgs__Int8)
+DATATYPE(std_msgs::msg::Int8MultiArray,                           std_msgs__Int8MultiArray)
+DATATYPE(std_msgs::msg::MultiArrayDimension,                      std_msgs__MultiArrayDimension)
+DATATYPE(std_msgs::msg::MultiArrayLayout,                         std_msgs__MultiArrayLayout)
+DATATYPE(std_msgs::msg::String,                                   std_msgs__String)
+DATATYPE(std_msgs::msg::UInt16,                                   std_msgs__UInt16)
+DATATYPE(std_msgs::msg::UInt16MultiArray,                         std_msgs__UInt16MultiArray)
+DATATYPE(std_msgs::msg::UInt32,                                   std_msgs__UInt32)
+DATATYPE(std_msgs::msg::UInt32MultiArray,                         std_msgs__UInt32MultiArray)
+DATATYPE(std_msgs::msg::UInt64,                                   std_msgs__UInt64)
+DATATYPE(std_msgs::msg::UInt64MultiArray,                         std_msgs__UInt64MultiArray)
+DATATYPE(std_msgs::msg::UInt8,                                    std_msgs__UInt8)
+DATATYPE(std_msgs::msg::UInt8MultiArray,                          std_msgs__UInt8MultiArray)
+DATATYPE(stereo_msgs::msg::DisparityImage,                        stereo_msgs__DisparityImage)
+DATATYPE(tf2_msgs::msg::TF2Error,                                 tf2_msgs__TF2Error)
+DATATYPE(tf2_msgs::msg::TFMessage,                                tf2_msgs__TFMessage)
+DATATYPE(trajectory_msgs::msg::JointTrajectory,                   trajectory_msgs__JointTrajectory)
+DATATYPE(trajectory_msgs::msg::JointTrajectoryPoint,              trajectory_msgs__JointTrajectoryPoint)
+DATATYPE(trajectory_msgs::msg::MultiDOFJointTrajectory,           trajectory_msgs__MultiDOFJointTrajectory)
+DATATYPE(trajectory_msgs::msg::MultiDOFJointTrajectoryPoint,      trajectory_msgs__MultiDOFJointTrajectoryPoint)
+DATATYPE(vision_msgs::msg::BoundingBox2D,                         vision_msgs__BoundingBox2D)
+DATATYPE(vision_msgs::msg::BoundingBox2DArray,                    vision_msgs__BoundingBox2DArray)
+DATATYPE(vision_msgs::msg::BoundingBox3D,                         vision_msgs__BoundingBox3D)
+DATATYPE(vision_msgs::msg::BoundingBox3DArray,                    vision_msgs__BoundingBox3DArray)
+DATATYPE(vision_msgs::msg::Classification,                        vision_msgs__Classification)
+DATATYPE(vision_msgs::msg::Detection2D,                           vision_msgs__Detection2D)
+DATATYPE(vision_msgs::msg::Detection2DArray,                      vision_msgs__Detection2DArray)
+DATATYPE(vision_msgs::msg::Detection3D,                           vision_msgs__Detection3D)
+DATATYPE(vision_msgs::msg::Detection3DArray,                      vision_msgs__Detection3DArray)
+DATATYPE(vision_msgs::msg::LabelInfo,                             vision_msgs__LabelInfo)
+DATATYPE(vision_msgs::msg::ObjectHypothesis,                      vision_msgs__ObjectHypothesis)
+DATATYPE(vision_msgs::msg::ObjectHypothesisWithPose,              vision_msgs__ObjectHypothesisWithPose)
+DATATYPE(vision_msgs::msg::Point2D,                               vision_msgs__Point2D)
+DATATYPE(vision_msgs::msg::Pose2D,                                vision_msgs__Pose2D)
+DATATYPE(vision_msgs::msg::VisionClass,                           vision_msgs__VisionClass)
+DATATYPE(vision_msgs::msg::VisionInfo,                            vision_msgs__VisionInfo)
+DATATYPE(visualization_msgs::msg::ImageMarker,                    visualization_msgs__ImageMarker)
+DATATYPE(visualization_msgs::msg::InteractiveMarker,              visualization_msgs__InteractiveMarker)
+DATATYPE(visualization_msgs::msg::InteractiveMarkerControl,       visualization_msgs__InteractiveMarkerControl)
+DATATYPE(visualization_msgs::msg::InteractiveMarkerFeedback,      visualization_msgs__InteractiveMarkerFeedback)
+DATATYPE(visualization_msgs::msg::InteractiveMarkerInit,          visualization_msgs__InteractiveMarkerInit)
+DATATYPE(visualization_msgs::msg::InteractiveMarkerPose,          visualization_msgs__InteractiveMarkerPose)
+DATATYPE(visualization_msgs::msg::InteractiveMarkerUpdate,        visualization_msgs__InteractiveMarkerUpdate)
+DATATYPE(visualization_msgs::msg::Marker,                         visualization_msgs__Marker)
+DATATYPE(visualization_msgs::msg::MarkerArray,                    visualization_msgs__MarkerArray)
+DATATYPE(visualization_msgs::msg::MenuEntry,                      visualization_msgs__MenuEntry)
+DATATYPE(visualization_msgs::msg::MeshFile,                       visualization_msgs__MeshFile)
+DATATYPE(visualization_msgs::msg::UVCoordinate,                   visualization_msgs__UVCoordinate)
