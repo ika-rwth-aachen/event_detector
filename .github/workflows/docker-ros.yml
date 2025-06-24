@@ -11,5 +11,6 @@ jobs:
         with:
           platform: amd64
           target: run
-          base-image: rwthika/ros2:humble
+          base-image: rwthika/ros2:jazzy
+          rmw-implementation: rmw_zenoh_cpp
           command: ros2 launch event_detector event_detector.launch.py startup_state:=3

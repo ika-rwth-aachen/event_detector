@@ -271,7 +271,7 @@ void EventDetector::initializeBufferFromBag() {
         rclcpp::SerializedMessage extracted_serialized_msg(*m->serialized_data);
         rclcpp::Serialization<tf2_msgs::msg::TFMessage> serialization;
         serialization.deserialize_message(&extracted_serialized_msg, deserialized_msg.get());
-        this->insertTransformPassthrough(deserialized_msg, m->topic_name, rclcpp::Time(m->time_stamp, RCL_ROS_TIME));
+        this->insertTransformPassthrough(deserialized_msg, m->topic_name, rclcpp::Time(m->recv_timestamp, RCL_ROS_TIME));
       } else {
         // find client that message belongs to and insert it into its buffer
         for (const ClientConnection& client : connected_clients_) {
@@ -285,7 +285,7 @@ void EventDetector::initializeBufferFromBag() {
     rclcpp::Serialization<TYPE> serialization;                                                             \
     serialization.deserialize_message(&extracted_serialized_msg, deserialized_msg.get());                  \
     this->insertPassthrough<TYPE>(deserialized_msg, client.id, m->topic_name,                              \
-                                  std::optional<rclcpp::Time>(rclcpp::Time(m->time_stamp, RCL_ROS_TIME))); \
+                                  std::optional<rclcpp::Time>(rclcpp::Time(m->recv_timestamp, RCL_ROS_TIME))); \
     msg_count_without_tf++;                                                                                \
     break;                                                                                                 \
   }

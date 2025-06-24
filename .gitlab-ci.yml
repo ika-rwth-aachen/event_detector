@@ -4,5 +4,6 @@ include:
 variables:
   PLATFORM: amd64,arm64
   TARGET: dev,run
-  BASE_IMAGE: rwthika/ros2:humble
+  BASE_IMAGE: rwthika/ros2:jazzy
+  RMW_IMPLEMENTATION: rmw_zenoh_cpp
   COMMAND: ros2 launch event_detector event_detector.launch.py startup_state:=3
