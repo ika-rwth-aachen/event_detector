@@ -1,3 +1,6 @@
+# This workflow is currently disabled in the Web interface due to weak GitHub runners taking too long.
+# https://github.com/ika-rwth-aachen/event_detector/actions/workflows/docker-ros.yml
+
 name: docker-ros
 
 on: push

@@ -1,9 +1,9 @@
 # *Event Detector —* A Modular Event Detection Framework for ROS 2
 
 <p align="center">
-  <img src="https://img.shields.io/github/v/release/ika-rwth-aachen/event_detector"/>
+  <!--<img src="https://img.shields.io/github/v/release/ika-rwth-aachen/event_detector"/>-->
   <img src="https://img.shields.io/github/license/ika-rwth-aachen/event_detector"/>
-  <a href="https://github.com/ika-rwth-aachen/event_detector/actions/workflows/docker-ros.yml"><img src="https://github.com/ika-rwth-aachen/event_detector/actions/workflows/docker-ros.yml/badge.svg"/></a>
+  <!--<a href="https://github.com/ika-rwth-aachen/event_detector/actions/workflows/docker-ros.yml"><img src="https://github.com/ika-rwth-aachen/event_detector/actions/workflows/docker-ros.yml/badge.svg"/></a>-->
   <a href="https://ika-rwth-aachen.github.io/event_detector/"><img src="https://github.com/ika-rwth-aachen/event_detector/actions/workflows/doc.yml/badge.svg"/></a>
   <img src="https://img.shields.io/badge/ROS 2-jazzy-293754"/>
   <a href="https://github.com/ika-rwth-aachen/event_detector"><img src="https://img.shields.io/github/stars/ika-rwth-aachen/event_detector?style=social"/></a>
