@@ -1,11 +1,11 @@
 # *Event Detector —* A Modular Event Detection Framework for ROS 2
 
 <p align="center">
-  <img src="https://img.shields.io/github/v/release/ika-rwth-aachen/event_detector"/>
+  <!--<img src="https://img.shields.io/github/v/release/ika-rwth-aachen/event_detector"/>-->
   <img src="https://img.shields.io/github/license/ika-rwth-aachen/event_detector"/>
-  <a href="https://github.com/ika-rwth-aachen/event_detector/actions/workflows/docker-ros.yml"><img src="https://github.com/ika-rwth-aachen/event_detector/actions/workflows/docker-ros.yml/badge.svg"/></a>
+  <!--<a href="https://github.com/ika-rwth-aachen/event_detector/actions/workflows/docker-ros.yml"><img src="https://github.com/ika-rwth-aachen/event_detector/actions/workflows/docker-ros.yml/badge.svg"/></a>-->
   <a href="https://ika-rwth-aachen.github.io/event_detector/"><img src="https://github.com/ika-rwth-aachen/event_detector/actions/workflows/doc.yml/badge.svg"/></a>
-  <img src="https://img.shields.io/badge/ROS 2-humble-293754"/>
+  <img src="https://img.shields.io/badge/ROS 2-jazzy-293754"/>
   <a href="https://github.com/ika-rwth-aachen/event_detector"><img src="https://img.shields.io/github/stars/ika-rwth-aachen/event_detector?style=social"/></a>
 </p>
 
@@ -50,9 +50,9 @@ As part of the event detector framework, we provide an initial set of action plu
 
 | Common Name | Action Plugin | Purpose |
 | --- | --- | --- |
-| [ROS Bag Recording](https://github.com/ika-rwth-aachen/event_detector_bag_recording) | `event_detector_bag_recording` | write data from buffer to ROS bag file |
 | [Database Recording](https://github.com/ika-rwth-aachen/event_detector_db_recording) | `event_detector_db_recording` | write data from buffer to a database |
-| [Recording Trigger](https://github.com/ika-rwth-aachen/event_detector_recording_trigger) | `event_detector_recording_trigger` | trigger a (remote) data recording |
+| ROS Bag Recording | *work in progress* | write data from buffer to ROS bag file |
+| Recording Trigger | *work in progress* | trigger a (remote) data recording |
 | Kubernetes Operator | *work in progress* | request deployment of applications in Kubernetes |
 
 <img src="./assets/architecture.png" alt="architecture" width="600"/>
@@ -206,7 +206,7 @@ The steps below describe how to add a custom analysis rule to an existing action
 
 <details><summary><i>Click to show</i></summary>
 
-The event detector action plugin architecture is built with [ROS 2's `pluginlib` mechanism](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Pluginlib.html). All action plugins are separate ROS packages that build the action plugins as shared libraries, which are loaded by the core event detector node at runtime.
+The event detector action plugin architecture is built with [ROS 2's `pluginlib` mechanism](https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Pluginlib.html). All action plugins are separate ROS packages that build the action plugins as shared libraries, which are loaded by the core event detector node at runtime.
 
 The steps below describe how to create a custom action plugin.
 1. Create a new ROS package, e.g., `event_detector_custom_action_plugin`, with dependencies on `event_detector` and `pluginlib` in its `package.xml`.

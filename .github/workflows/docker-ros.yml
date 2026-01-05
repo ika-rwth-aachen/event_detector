@@ -1,15 +1,19 @@
+# This workflow is currently disabled in the Web interface due to weak GitHub runners taking too long.
+# https://github.com/ika-rwth-aachen/event_detector/actions/workflows/docker-ros.yml
+
 name: docker-ros
 
 on: push
 
 jobs:
 
-  ros2-humble:
+  ros2-jazzy:
     runs-on: ubuntu-latest
     steps:
       - uses: ika-rwth-aachen/docker-ros@main
         with:
           platform: amd64
           target: run
-          base-image: rwthika/ros2:humble
+          base-image: rwthika/ros2:jazzy
+          rmw-implementation: rmw_zenoh_cpp
           command: ros2 launch event_detector event_detector.launch.py startup_state:=3
