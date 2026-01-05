@@ -73,7 +73,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p align="center"><a class="anchor" id="md_README"></a> </p>
-<p><img src="https://img.shields.io/github/v/release/ika-rwth-aachen/event_detector" alt="" class="inline"/> <img src="https://img.shields.io/github/license/ika-rwth-aachen/event_detector" alt="" class="inline"/> <a href="https://github.com/ika-rwth-aachen/event_detector/actions/workflows/docker-ros.yml"><img src="https://github.com/ika-rwth-aachen/event_detector/actions/workflows/docker-ros.yml/badge.svg" alt="" style="pointer-events: none;" class="inline"/></a> <a href="https://ika-rwth-aachen.github.io/event_detector/"><img src="https://github.com/ika-rwth-aachen/event_detector/actions/workflows/doc.yml/badge.svg" alt="" style="pointer-events: none;" class="inline"/></a> <img src="https://img.shields.io/badge/ROS 2-humble-293754" alt="" class="inline"/> <a href="https://github.com/ika-rwth-aachen/event_detector"><img src="https://img.shields.io/github/stars/ika-rwth-aachen/event_detector?style=social" alt="" class="inline"/></a> </p>
+<p align="center"></p>
+<p><img src="https://img.shields.io/github/license/ika-rwth-aachen/event_detector" alt="" class="inline"/></p>
+<p><a href="https://ika-rwth-aachen.github.io/event_detector/"><img src="https://github.com/ika-rwth-aachen/event_detector/actions/workflows/doc.yml/badge.svg" alt="" style="pointer-events: none;" class="inline"/></a> <img src="https://img.shields.io/badge/ROS 2-jazzy-293754" alt="" class="inline"/> <a href="https://github.com/ika-rwth-aachen/event_detector"><img src="https://img.shields.io/github/stars/ika-rwth-aachen/event_detector?style=social" alt="" class="inline"/></a> </p>
 <p align="center"></p>
 <p>⸻ <b><em><a href="#quick-start">Quick Start</a></em></b> | <b><em><a href="#action-plugins">Action Plugins</a></em></b> | <b><em><a href="#installation">Installation</a></em></b> | <b><em><a href="#documentation">Documentation</a></em></b> | <b><em><a href="#research-article">Research Article</a></em></b> | <b><em><a href="#acknowledgements">Acknowledgements</a></em></b> ⸻ </p>
 <p>The <em><b>event detector</b></em> is a generic and modular event detection framework for ROS 2 applications. With the event detector, you can automatically ...</p><ul>
@@ -112,11 +114,11 @@ Action Plugins</h1>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Common Name   </th><th class="markdownTableHeadNone">Action Plugin   </th><th class="markdownTableHeadNone">Purpose    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a href="https://github.com/ika-rwth-aachen/event_detector_bag_recording">ROS Bag Recording</a>   </td><td class="markdownTableBodyNone"><code>event_detector_bag_recording</code>   </td><td class="markdownTableBodyNone">write data from buffer to ROS bag file    </td></tr>
-<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><a href="https://github.com/ika-rwth-aachen/event_detector_db_recording">Database Recording</a>   </td><td class="markdownTableBodyNone"><code>event_detector_db_recording</code>   </td><td class="markdownTableBodyNone">write data from buffer to a database    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">ROS Bag Recording   </td><td class="markdownTableBodyNone"><em>work in progress</em>   </td><td class="markdownTableBodyNone">write data from buffer to ROS bag file    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><a href="https://github.com/ika-rwth-aachen/event_detector_recording_trigger">Recording Trigger</a>   </td><td class="markdownTableBodyNone"><code>event_detector_recording_trigger</code>   </td><td class="markdownTableBodyNone">trigger a (remote) data recording    </td></tr>
+<td class="markdownTableBodyNone">Recording Trigger   </td><td class="markdownTableBodyNone"><em>work in progress</em>   </td><td class="markdownTableBodyNone">trigger a (remote) data recording    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Kubernetes Operator   </td><td class="markdownTableBodyNone"><em>work in progress</em>   </td><td class="markdownTableBodyNone">request deployment of applications in Kubernetes   </td></tr>
 </table>
@@ -282,7 +284,7 @@ How to implement a custom action plugin</h2>
 <summary >
 <em>Click to show</em></summary>
 <p></p>
-<p>The event detector action plugin architecture is built with <a href="https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Pluginlib.html">ROS 2's <code>pluginlib</code> mechanism</a>. All action plugins are separate ROS packages that build the action plugins as shared libraries, which are loaded by the core event detector node at runtime.</p>
+<p>The event detector action plugin architecture is built with <a href="https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Pluginlib.html">ROS 2's <code>pluginlib</code> mechanism</a>. All action plugins are separate ROS packages that build the action plugins as shared libraries, which are loaded by the core event detector node at runtime.</p>
 <p>The steps below describe how to create a custom action plugin.</p><ol type="1">
 <li>Create a new ROS package, e.g., <code>event_detector_custom_action_plugin</code>, with dependencies on <code><a class="el" href="namespaceevent__detector.html">event_detector</a></code> and <code>pluginlib</code> in its <code>package.xml</code>. <div class="fragment"><div class="line"><span class="comment">&lt;!-- ... --&gt;</span></div>
 <div class="line">&lt;<span class="keywordtype">depend</span>&gt;<span class="keyword">event_detector</span>&lt;/<span class="keywordtype">depend</span>&gt;</div>
