@@ -50,9 +50,9 @@ As part of the event detector framework, we provide an initial set of action plu
 
 | Common Name | Action Plugin | Purpose |
 | --- | --- | --- |
-| [ROS Bag Recording](https://github.com/ika-rwth-aachen/event_detector_bag_recording) | `event_detector_bag_recording` | write data from buffer to ROS bag file |
 | [Database Recording](https://github.com/ika-rwth-aachen/event_detector_db_recording) | `event_detector_db_recording` | write data from buffer to a database |
-| [Recording Trigger](https://github.com/ika-rwth-aachen/event_detector_recording_trigger) | `event_detector_recording_trigger` | trigger a (remote) data recording |
+| ROS Bag Recording | *work in progress* | write data from buffer to ROS bag file |
+| Recording Trigger | *work in progress* | trigger a (remote) data recording |
 | Kubernetes Operator | *work in progress* | request deployment of applications in Kubernetes |
 
 <img src="./assets/architecture.png" alt="architecture" width="600"/>
