@@ -24,8 +24,11 @@ find_package(etsi_its_vam_ts_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(lifecycle_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
+find_package(pcl_ros REQUIRED)
 find_package(perception_msgs REQUIRED)
 find_package(pluginlib REQUIRED)
+find_package(point_cloud_interfaces REQUIRED)
+find_package(point_cloud_transport REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
@@ -76,8 +79,11 @@ ament_target_dependencies(${PROJECT_NAME}_lib
   geometry_msgs
   lifecycle_msgs
   nav_msgs
+  pcl_ros
   perception_msgs
   pluginlib
+  point_cloud_interfaces
+  point_cloud_transport
   rclcpp
   rclcpp_components
   rclcpp_lifecycle
@@ -110,8 +116,11 @@ ament_export_dependencies(
   geometry_msgs
   lifecycle_msgs
   nav_msgs
+  pcl_ros
   perception_msgs
   pluginlib
+  point_cloud_interfaces
+  point_cloud_transport
   rclcpp
   rclcpp_components
   rclcpp_lifecycle

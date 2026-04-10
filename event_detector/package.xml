@@ -28,7 +28,10 @@
   <depend>lifecycle_msgs</depend>
   <depend>nav_msgs</depend>
   <depend>perception_msgs</depend>
+  <depend>pcl_ros</depend>
   <depend>pluginlib</depend>
+  <depend>point_cloud_interfaces</depend>
+  <depend>point_cloud_transport</depend>
   <depend>rclcpp_components</depend>
   <depend>rclcpp_lifecycle</depend>
   <depend>rclcpp</depend>
