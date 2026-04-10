@@ -26,6 +26,7 @@ find_package(lifecycle_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(perception_msgs REQUIRED)
 find_package(pluginlib REQUIRED)
+find_package(point_cloud_interfaces REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
@@ -78,6 +79,7 @@ ament_target_dependencies(${PROJECT_NAME}_lib
   nav_msgs
   perception_msgs
   pluginlib
+  point_cloud_interfaces
   rclcpp
   rclcpp_components
   rclcpp_lifecycle
@@ -112,6 +114,7 @@ ament_export_dependencies(
   nav_msgs
   perception_msgs
   pluginlib
+  point_cloud_interfaces
   rclcpp
   rclcpp_components
   rclcpp_lifecycle

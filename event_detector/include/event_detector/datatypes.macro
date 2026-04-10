@@ -94,6 +94,7 @@ DATATYPE(perception_msgs::msg::ObjectList,                        perception_msg
 DATATYPE(perception_msgs::msg::ObjectReferencePoint,              perception_msgs__ObjectReferencePoint)
 DATATYPE(perception_msgs::msg::ObjectState,                       perception_msgs__ObjectState)
 DATATYPE(perception_msgs::msg::ObjectStatePrediction,             perception_msgs__ObjectStatePrediction)
+DATATYPE(point_cloud_interfaces::msg::CompressedPointCloud2,      point_cloud_interfaces__CompressedPointCloud2)
 DATATYPE(sensor_msgs::msg::BatteryState,                          sensor_msgs__BatteryState)
 DATATYPE(sensor_msgs::msg::CameraInfo,                            sensor_msgs__CameraInfo)
 DATATYPE(sensor_msgs::msg::ChannelFloat32,                        sensor_msgs__ChannelFloat32)

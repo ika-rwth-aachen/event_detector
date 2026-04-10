@@ -77,6 +77,7 @@ SOFTWARE.
 #include <perception_msgs/msg/object_reference_point.hpp>
 #include <perception_msgs/msg/object_state.hpp>
 #include <perception_msgs/msg/object_state_prediction.hpp>
+#include <point_cloud_interfaces/msg/compressed_point_cloud2.hpp>
 #include <sensor_msgs/msg/battery_state.hpp>
 #include <sensor_msgs/msg/camera_info.hpp>
 #include <sensor_msgs/msg/channel_float32.hpp>

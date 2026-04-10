@@ -81,6 +81,7 @@ event_detector:
           # - perception_msgs__ObjectReferencePoint
           # - perception_msgs__ObjectState
           # - perception_msgs__ObjectStatePrediction
+          # - point_cloud_interfaces__CompressedPointCloud2
           # - sensor_msgs__BatteryState
           # - sensor_msgs__CameraInfo
           # - sensor_msgs__ChannelFloat32
