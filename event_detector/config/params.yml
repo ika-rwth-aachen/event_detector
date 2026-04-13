@@ -25,6 +25,7 @@ event_detector:
 
         # base_frame:   # client base frame used for storing static transforms
         # tf_prefix:    # client-specific prefix of frames found in dynamic transforms
+        # buffer_all_tf_static: false  # store the complete /tf_static topic for this client
 
         # data types to subscribe
         data_types:
