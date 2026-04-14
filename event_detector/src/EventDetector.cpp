@@ -307,40 +307,27 @@ void EventDetector::insertTransformPassthrough(const std::shared_ptr<const tf2_m
   std::shared_lock lock{reconfigure_mutex_};
 
   string_map<std::shared_ptr<tf2_msgs::msg::TFMessage>> client_transforms;
-  const bool is_tf_static = topic == kStaticTransformationTopic;
 
   // loop over transforms included in message
   for (const auto& tf : transforms->transforms) {
     bool matched_client = false;
 
-    // For each client with buffer_all_tf_static == true, append the current static
-    // transform to that client’s buffered TFMessage.
-    if (is_tf_static) {
-      for (const auto& client : connected_clients_) {
-        if (!client.buffer_all_tf_static) {
-          continue;
-        }
-        if (client_transforms.find(client.id) == client_transforms.end()) {
-          client_transforms[client.id] = std::make_shared<tf2_msgs::msg::TFMessage>();
-        }
-        client_transforms[client.id]->transforms.push_back(tf);
-        matched_client = true;
-      }
-    }
-
-    // Loop over all clients: Assign the current transform to a client via tf_prefix.
-    // If a client has buffer_all_tf_static == true, skip that client here,
-    // because that client was already handled in the previous block.
     for (const auto& client : connected_clients_) {
-      if (is_tf_static && client.buffer_all_tf_static) {
+      bool should_buffer_static = (topic == kStaticTransformationTopic) && client.buffer_all_tf_static;
+      bool should_buffer_due_to_prefix =
+          !should_buffer_static && !client.tf_prefix.empty() && tf.child_frame_id.rfind(client.tf_prefix, 0) == 0;
+
+      if (!should_buffer_static && !should_buffer_due_to_prefix) {
         continue;
       }
-      if (!client.tf_prefix.empty() && tf.child_frame_id.rfind(client.tf_prefix, 0) == 0) {  // startswith
-        if (client_transforms.find(client.id) == client_transforms.end()) {
-          client_transforms[client.id] = std::make_shared<tf2_msgs::msg::TFMessage>();
-        }
-        client_transforms[client.id]->transforms.push_back(tf);
-        matched_client = true;
+
+      if (client_transforms.find(client.id) == client_transforms.end()) {
+        client_transforms[client.id] = std::make_shared<tf2_msgs::msg::TFMessage>();
+      }
+      client_transforms[client.id]->transforms.push_back(tf);
+      matched_client = true;
+
+      if (should_buffer_due_to_prefix) {
         break;
       }
     }
