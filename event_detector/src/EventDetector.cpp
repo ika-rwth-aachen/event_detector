@@ -80,6 +80,7 @@ void EventDetector::loadClientParameters() {
     connection.name = client;
     this->get_parameter_or("client_params." + client + ".base_frame", connection.base_frame, std::string{});
     this->get_parameter_or("client_params." + client + ".tf_prefix", connection.tf_prefix, std::string{});
+    this->get_parameter_or("client_params." + client + ".buffer_all_tf", connection.buffer_all_tf, false);
     this->get_parameter_or("client_params." + client + ".buffer_all_tf_static", connection.buffer_all_tf_static,
                            false);
     // parse data entries
@@ -313,11 +314,12 @@ void EventDetector::insertTransformPassthrough(const std::shared_ptr<const tf2_m
     bool matched_client = false;
 
     for (const auto& client : connected_clients_) {
+      bool should_buffer_dynamic = (topic == kTransformationTopic) && client.buffer_all_tf;
       bool should_buffer_static = (topic == kStaticTransformationTopic) && client.buffer_all_tf_static;
-      bool should_buffer_due_to_prefix =
-          !should_buffer_static && !client.tf_prefix.empty() && tf.child_frame_id.rfind(client.tf_prefix, 0) == 0;
+      bool should_buffer_due_to_prefix = !should_buffer_dynamic && !should_buffer_static &&
+                                         !client.tf_prefix.empty() && tf.child_frame_id.rfind(client.tf_prefix, 0) == 0;
 
-      if (!should_buffer_static && !should_buffer_due_to_prefix) {
+      if (!should_buffer_dynamic && !should_buffer_static && !should_buffer_due_to_prefix) {
         continue;
       }
 

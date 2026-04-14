@@ -111,6 +111,7 @@ None by default. Action plugins may define additional publishers.
 | `clients` | `string[]` | `[]` | client names |  |
 | `client_params.<CLIENT_NAME>.base_frame` | `string` | `""` | client base frame used for storing static transforms |  |
 | `client_params.<CLIENT_NAME>.tf_prefix` | `string` | `""` | client-specific prefix of frames found in transforms, used to select transforms to buffer |  |
+| `client_params.<CLIENT_NAME>.buffer_all_tf` | `bool` | `false` | store the complete `/tf` topic for this client, bypassing `tf_prefix` matching for dynamic transforms |  |
 | `client_params.<CLIENT_NAME>.buffer_all_tf_static` | `bool` | `false` | store the complete `/tf_static` topic for this client, bypassing `tf_prefix` matching for static transforms |  |
 | `client_params.<CLIENT_NAME>.data_types` | `string[]` | `[]` | data types to subscribe | see second column in [`datatypes.macro`](./event_detector/include/event_detector/datatypes.macro) |
 | `client_params.<CLIENT_NAME>.data_type_params.<DATA_TYPE>.topics` | `string[]` | `[]` | topic names |  |

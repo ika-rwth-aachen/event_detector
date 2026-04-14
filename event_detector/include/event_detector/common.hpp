@@ -67,6 +67,7 @@ struct ClientConnection {
   std::string name;        ///< client name
   std::string base_frame;  ///< name of base frame
   std::string tf_prefix;   ///< prefix of frames
+  bool buffer_all_tf = false;  ///< whether to store the full /tf topic for this client
   bool buffer_all_tf_static = false;  ///< whether to store the full /tf_static topic for this client
 #define DATATYPE(TYPE, VAR) \
   std::vector<std::tuple<std::string, double, int>> VAR;  ///< TYPE topics with buffer time and subscriber queue size
