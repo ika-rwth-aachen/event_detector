@@ -313,8 +313,8 @@ void EventDetector::insertTransformPassthrough(const std::shared_ptr<const tf2_m
   for (const auto& tf : transforms->transforms) {
     bool matched_client = false;
 
-    // Allow clients to opt into the complete /tf_static topic, even if frame names
-    // do not follow a shared prefix convention.
+    // For each client with buffer_all_tf_static == true, append the current static
+    // transform to that client’s buffered TFMessage.
     if (is_tf_static) {
       for (const auto& client : connected_clients_) {
         if (!client.buffer_all_tf_static) {
@@ -328,8 +328,9 @@ void EventDetector::insertTransformPassthrough(const std::shared_ptr<const tf2_m
       }
     }
 
-    // For /tf, and for /tf_static clients that did not opt into the full topic,
-    // keep the existing prefix-based routing behavior.
+    // Loop over all clients: Assign the current transform to a client via tf_prefix.
+    // If a client has buffer_all_tf_static == true, skip that client here,
+    // because that client was already handled in the previous block.
     for (const auto& client : connected_clients_) {
       if (is_tf_static && client.buffer_all_tf_static) {
         continue;
