@@ -80,6 +80,9 @@ void EventDetector::loadClientParameters() {
     connection.name = client;
     this->get_parameter_or("client_params." + client + ".base_frame", connection.base_frame, std::string{});
     this->get_parameter_or("client_params." + client + ".tf_prefix", connection.tf_prefix, std::string{});
+    this->get_parameter_or("client_params." + client + ".buffer_all_tf", connection.buffer_all_tf, false);
+    this->get_parameter_or("client_params." + client + ".buffer_all_tf_static", connection.buffer_all_tf_static,
+                           false);
     // parse data entries
     std::vector<std::string> data_types;
     this->get_parameter_or("client_params." + client + ".data_types", data_types, {});
@@ -308,26 +311,36 @@ void EventDetector::insertTransformPassthrough(const std::shared_ptr<const tf2_m
 
   // loop over transforms included in message
   for (const auto& tf : transforms->transforms) {
-    // try to determine involved client
-    std::string client_id;
+    bool matched_client = false;
+
     for (const auto& client : connected_clients_) {
-      if (!client.tf_prefix.empty() && tf.child_frame_id.rfind(client.tf_prefix, 0) == 0) {  // startswith
-        client_id = client.id;
+      bool should_buffer_dynamic = (topic == kTransformationTopic) && client.buffer_all_tf;
+      bool should_buffer_static = (topic == kStaticTransformationTopic) && client.buffer_all_tf_static;
+      bool should_buffer_due_to_prefix = !should_buffer_dynamic && !should_buffer_static &&
+                                         !client.tf_prefix.empty() && tf.child_frame_id.rfind(client.tf_prefix, 0) == 0;
+
+      if (!should_buffer_dynamic && !should_buffer_static && !should_buffer_due_to_prefix) {
+        continue;
+      }
+
+      if (client_transforms.find(client.id) == client_transforms.end()) {
+        client_transforms[client.id] = std::make_shared<tf2_msgs::msg::TFMessage>();
+      }
+      client_transforms[client.id]->transforms.push_back(tf);
+      matched_client = true;
+
+      if (should_buffer_due_to_prefix) {
         break;
       }
     }
-    if (client_id.empty()) {
+
+    if (!matched_client) {
       RCLCPP_WARN_ONCE(this->get_logger(),
                        "Could not match transform from frame_id='%s' to child_frame_id='%s' "
-                       "to any client's 'tf_prefix', skipping. This warning will only be shown once.",
+                       "to any client configuration, skipping. This warning will only be shown once.",
                        tf.header.frame_id.c_str(), tf.child_frame_id.c_str());
       continue;
     }
-
-    // collect transforms by client
-    if (client_transforms.find(client_id) == client_transforms.end())
-      client_transforms[client_id] = std::make_shared<tf2_msgs::msg::TFMessage>();
-    client_transforms[client_id]->transforms.push_back(tf);
   }
 
   // pass transforms to client-specific buffers
